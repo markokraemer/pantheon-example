@@ -126,3 +126,145 @@
   color: hsl(var(--neon-blue));
   text-shadow: 0 0 5px hsl(var(--neon-blue)), 0 0 10px hsl(var(--neon-blue)), 0 0 15px hsl(var(--neon-blue)), 0 0 20px hsl(var(--neon-blue));
 }
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sidebar {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Map styles */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+}
+
+.cyberpunk-mode .leaflet-popup-content-wrapper {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  border: 1px solid #00ff00;
+}
+
+.leaflet-popup-tip {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cyberpunk-mode .leaflet-popup-tip {
+  background-color: #00ff00;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #00ff00;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cyberpunk button styles */
+.cyberpunk-button {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  border: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.cyberpunk-button:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.8);
+  transform: scale(1.05);
+}
+
+/* Glitch effect for cyberpunk mode */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00ff;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00ffff;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(17px, 9999px, 94px, 0);
+  }
+  20% {
+    clip: rect(63px, 9999px, 44px, 0);
+  }
+  40% {
+    clip: rect(145px, 9999px, 165px, 0);
+  }
+  60% {
+    clip: rect(67px, 9999px, 107px, 0);
+  }
+  80% {
+    clip: rect(115px, 9999px, 95px, 0);
+  }
+  100% {
+    clip: rect(66px, 9999px, 162px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(65px, 9999px, 200px, 0);
+  }
+  20% {
+    clip: rect(38px, 9999px, 24px, 0);
+  }
+  40% {
+    clip: rect(154px, 9999px, 75px, 0);
+  }
+  60% {
+    clip: rect(93px, 9999px, 53px, 0);
+  }
+  80% {
+    clip: rect(107px, 9999px, 185px, 0);
+  }
+  100% {
+    clip: rect(144px, 9999px, 27px, 0);
+  }
+}

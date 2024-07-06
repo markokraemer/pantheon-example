@@ -57,9 +57,11 @@ const CyberpunkSection = () => {
         >
           <div className="relative aspect-video rounded-xl overflow-hidden">
             <LazyImage
-              src={cyberpunkMode ? "/api/placeholder/1600/900" : "/api/placeholder/1600/900"}
+              src={cyberpunkMode ? "https://via.placeholder.com/1600x900?text=Cyberpunk+San+Francisco" : "https://via.placeholder.com/1600x900?text=San+Francisco+Normal+View"}
               alt={cyberpunkMode ? "San Francisco in Cyberpunk Mode" : "San Francisco Normal View"}
               className="w-full h-full object-cover transition-opacity duration-500"
+              width={1600}
+              height={900}
             />
             <div className={`absolute inset-0 bg-gradient-to-r ${
               cyberpunkMode ? 'from-neon-pink/50 to-neon-blue/50' : 'from-transparent to-transparent'

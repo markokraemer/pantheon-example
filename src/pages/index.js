@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Layout from '@/components/Layout';
-import DemoSection from '@/components/DemoSection';
 import CyberpunkSection from '@/components/CyberpunkSection';
+import DemoSection from '@/components/DemoSection';
+import AIInsightsSection from '@/components/AIInsightsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MapIcon, SearchIcon, ShieldCheckIcon, CalendarIcon, DollarSignIcon, ChevronUpIcon } from 'lucide-react';
+import { MapIcon, SearchIcon, ShieldCheckIcon, CalendarIcon, DollarSignIcon, ChevronUpIcon, BrainIcon } from 'lucide-react';
 import LazyImage from '@/components/LazyImage';
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
@@ -147,6 +148,33 @@ const FloatingCTA = () => (
   </motion.div>
 );
 
+const AIFeaturesSection = () => (
+  <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <div className="container px-4 md:px-6">
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-gray-900 dark:text-white">
+        AI-Powered Features
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FeatureCard
+          icon={BrainIcon}
+          title="Smart Recommendations"
+          description="Our AI analyzes your preferences and behavior to suggest personalized locations and activities."
+        />
+        <FeatureCard
+          icon={MapIcon}
+          title="Dynamic Routing"
+          description="AI-optimized routes that adapt in real-time to traffic, events, and your schedule."
+        />
+        <FeatureCard
+          icon={SearchIcon}
+          title="Natural Language Search"
+          description="Ask questions in plain English and get intelligent, context-aware answers about San Francisco."
+        />
+      </div>
+    </div>
+  </section>
+);
+
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -198,6 +226,8 @@ export default function Home() {
           </div>
         </section>
 
+        <AIFeaturesSection />
+
         <section id="features" className="py-20 md:py-32 bg-gray-100 dark:bg-gray-800">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
@@ -223,11 +253,13 @@ export default function Home() {
           </div>
         </section>
 
-        <DemoSection />
-
         <SafetyLevelSection />
 
         <CyberpunkSection />
+
+        <DemoSection />
+
+        <AIInsightsSection />
 
         <ComparisonSection />
 

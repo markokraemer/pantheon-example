@@ -1,25 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import LazyImage from './LazyImage';
 
 const testimonials = [
   {
     name: "Alex Johnson",
     role: "Travel Blogger",
     content: "pantheon.so has revolutionized the way I plan my trips. The AI-powered search is incredibly intuitive and saves me hours of research.",
-    avatar: "/images/avatar1.jpg"
+    avatar: "https://via.placeholder.com/100x100?text=AJ"
   },
   {
     name: "Sarah Lee",
     role: "Urban Planner",
     content: "As an urban planner, I rely heavily on accurate map data. pantheon.so's AI capabilities have made my job significantly easier and more efficient.",
-    avatar: "/images/avatar2.jpg"
+    avatar: "https://via.placeholder.com/100x100?text=SL"
   },
   {
     name: "Mike Chen",
     role: "Small Business Owner",
     content: "Finding the perfect location for my new store was a breeze with pantheon.so. The AI understood my specific needs and provided spot-on recommendations.",
-    avatar: "/images/avatar3.jpg"
+    avatar: "https://via.placeholder.com/100x100?text=MC"
   }
 ];
 
